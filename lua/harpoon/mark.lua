@@ -224,7 +224,7 @@ function M.add_file(file_name_or_buf_id)
     validate_buf_name(buf_name)
 
     local found_idx = get_first_empty_slot()
-    notify(string.format("Added `%s` as index `%d`", buf_name, found_idx), vim.log.levels.INFO)
+    notify("Added `%s` as index `%d`", buf_name, found_idx, vim.log.levels.INFO)
 
     harpoon.get_mark_config().marks[found_idx] = create_mark(buf_name)
     M.remove_empty_tail(false)
